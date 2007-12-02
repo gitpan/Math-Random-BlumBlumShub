@@ -1,0 +1,9 @@
+MANIFEST
+CHANGES
+README
+Makefile.PL
+BlumBlumShub.pm
+BlumBlumShub.xs
+typemap
+t/bbs.t
+t/pod.t
