@@ -1,11 +1,22 @@
 use ExtUtils::MakeMaker;
 
-my %options = 
+my %options =
 (
   'NAME' => 'Math::Random::BlumBlumShub',
   'LIBS' => ['-lgmp'],
   'VERSION_FROM' => 'BlumBlumShub.pm',
-  PREREQ_PM => {'Math::GMP'  => 2.0,},
+  'PREREQ_PM' => {'Math::GMP'  => 2.0,},
+  'LICENSE'  => 'perl',
+  META_MERGE => {
+   'meta-spec' => { version => 2 },
+    resources => {
+      repository => {
+        type => 'git',
+        url => 'https://github.com/sisyphus/math-random-blumblumshub.git',
+        web => 'https://github.com/sisyphus/math-random-blumblumshub',
+      },
+    },
+  },
 );
 
 WriteMakefile(%options);
