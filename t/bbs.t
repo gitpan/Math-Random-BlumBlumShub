@@ -13,7 +13,7 @@ $have_gmpz = 1 if !$@;
 if(!$have_gmp && !$have_gmpz) {die "You need Math::GMP and/or Math::GMPz to use this module"}
 
 if($have_gmp && $have_gmpz) {print "1..26\n"}
-else {print "1..13n"}
+else {print "1..13\n"}
 
 my $s1 = '615389388455725613122981570401989286707';
 my $s2 = '8936277569639798554773638405675965349567';
@@ -31,7 +31,10 @@ if($have_gmp) {
 
   bbs_seedgen($seed, $p1, $p2);
   if(Math::GMP::sizeinbase_gmp($seed, 2) <= $size && Math::GMP::sizeinbase_gmp($seed, 2) >= $size - 30) {print "ok 1\n"}
-  else {print "not ok 1 $size ", Math::GMP::sizeinbase_gmp($seed, 2), "\n"}
+  else {
+    warn " $size ", Math::GMP::sizeinbase_gmp($seed, 2), "\n";
+    print "not ok 1\n";
+  }
 
   bbs($bitstream, $p1, $p2, $seed, 20000);
   bbs($bitstream_20000, $p2, $p1, $seed, 20000 + $random_offset);

@@ -16,4 +16,4 @@ no_index:
     - inc
 resources:
   repository: https://github.com/sisyphus/math-random-blumblumshub.git
-version: 0.02
+version: 0.03
