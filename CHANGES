@@ -1,3 +1,10 @@
+ - 0.04
+   Rewrite a small section of the bbs() XS code to gain a significant boost in
+   performance. (Thanks Dana Jacobsen.)
+
+ - 0.03
+   Fix error in t/bbs.t
+
  - 0.02
    Add metadata to Makefile.PL
 
